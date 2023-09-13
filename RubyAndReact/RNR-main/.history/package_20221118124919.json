@@ -1,0 +1,12 @@
+{
+          "name":"heroku-deploy",
+          "description": "Build script for Heroku",
+          "engines":{
+                    "node":"19.0.0"
+          },
+          "scripts":{
+                    "clean":"rm -rf public",
+                    "build":"npm install --prefix client && npm run build --prefix client",
+                    "deploy":
+          }
+}
