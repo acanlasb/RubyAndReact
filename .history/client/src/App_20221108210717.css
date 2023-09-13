@@ -1,0 +1,48 @@
+*{
+background: #12c2e9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 0;
+      padding: 0;
+}
+.App {
+  text-align: center;
+}
+
+button{
+      width: 80px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #c471ed;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+}
+button:before
+
+.Navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+}
+.Brand{
+  font-size: 20px;
+}
+.Menu{
+  display:flex;
+  list-style-type: none;
+  gap: 30px;
+  margin: 0;
+  align-items: center;
+}
+
+.Menu li a{
+  text-decoration: none;
+}

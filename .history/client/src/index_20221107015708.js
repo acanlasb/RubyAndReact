@@ -1,0 +1,101 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import SignUpForm from "./SignUpForm";
+import LoginForm from "./LoginForm";
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import Games from "./Games";
+import GamesForm from "./GamesForm";
+import Home from "./pages/Home";
+import AuthProvider from "./providers/AuthProvider";
+import Protected from "./pages/Protected";
+import Public from "./pages/Public";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import { initMiddleware } from "devise-axios";
+import { createRoot } from "react-dom/client";
+import { Link } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+initMiddleware();
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <div>
+        <Navbar bg="light" expand="lg">
+          <Container>
+            <Navbar.Brand href="home">
+              <h1>Video Game Database</h1>
+            </Navbar.Brand>
+
+            <Link to="home">Home</Link>
+            {""}
+            <Link to="register">Register</Link>
+            {""}
+            <Link to="login">Login</Link>
+            {""}
+            <Link to="home">Logout</Link>
+            {""}
+            <Link to="protected">Protected</Link>
+            {""}
+            <Link to="public">Public</Link>
+          </Container>
+        </Navbar>
+      </div>
+    ),
+  },
+  {
+    path: "home",
+    element: (
+      <div>
+        <Home />
+      </div>
+    ),
+  },
+  {
+    path: "register",
+    element: (
+      <div>
+        <Register />
+      </div>
+    ),
+  },
+  {
+    path: "login",
+    element: (
+      <div>
+        <Login />
+      </div>
+    ),
+  },
+  {
+    path: "protected",
+    element: (
+      <div>
+        <Protected />
+      </div>
+    ),
+  },
+  {
+    path: "public",
+    element: (
+      <div>
+        <Public />
+      </div>
+    ),
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <AuthProvider>
+    <RouterProvider router={router} />
+  </AuthProvider>
+);
